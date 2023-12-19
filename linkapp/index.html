@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arima&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="icon" href="bro123.webp" type="image/webp">
+    <link rel="shortcut icon" href="bro123.webp" type="image/webp">
+
+    <title>onesimus thapa</title>
+    <style>
+        :root {
+            --bg-color: #171717; /* Dark mode background color */
+            --text-color: #fff; /* Dark mode text color */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            position: relative; /* Ensure proper stacking context */
+
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 245vh;
+            background-color: var(--bg-color);
+            background-image: url('bg12.png'); /* Same as your background image */
+            background-size: cover;
+    background-position: center center;
+    z-index: -1;
+            color: var(--text-color);
+            transition: background-color 0.5s, color 0.5s;
+        }
+       
+        body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.364), rgba(0, 0, 0, 0.6)), url('bg12.png'); /* Overlay and background image */
+    background-size: cover;
+    background-position: center center;
+    filter: blur(3px); /* Adjust the blur intensity as needed */
+    z-index: -1; /* Place it behind other content */
+    
+}
+
+        /* Additional styles for light mode */
+        body.light-mode {
+            --bg-color: #542400; /* Light mode background color */
+            --text-color: #000; /* Light mode text color */
+        }
+       
+        #toggleButton {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #000000;
+        }
+        .profile-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 17%;
+            background-image: url('C4A65905-3C14-40C5-9758-8D23CCC65D52.JPG'); /* Replace 'path_to_your_image.jpg' with your image URL */
+            background-size: cover;
+  background-position: center;
+  display: none;
+            z-index: -1; /* Place it behind other elements */
+        }
+
+        .profile-image {
+            width: 150px; /* Adjust as needed */
+            height: 150px; /* Adjust as needed */
+            border-radius: 50%;
+            margin-bottom: 0px;
+            margin-left: 20px;
+            border: 2px solid rgb(255, 255, 255);
+        margin-top: 80px; /* Add space below the border */
+
+        }
+        .profile-description {
+            font-size: 17px;
+            color: #ffffff;
+            text-align: center;
+            margin-top: -10px;
+        }
+        .profile-info {
+            color: #fff; /* Change header 2 text color to white */
+            margin-bottom: 10px;
+        }
+        .link-button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start; /* Aligns content to the start (left) */
+            width: 80%;
+            max-width: 300px;
+            text-align: left;
+            padding: 20px;
+            margin-bottom: 15px;
+            background-color: #171717; /* Change button background color */
+            color: #fff; /* Change button text color */
+            text-decoration: none;
+            border-radius: 8px;
+            border: 1px solid #fff; /* Adding an outline */
+            font-size: 19px;
+        }
+
+        .link-button i {
+            margin-right: 15px;
+    font-size: 25px; /* Change this value to adjust the icon size */
+        }
+
+        .link-button span {
+            flex: 1; /* Take up remaining space */
+            text-align: center; /* Center-align text */
+            margin-left: -25px; /* Adjust left margin */
+            font-family: 'Rubik', sans-serif;
+
+
+        }
+
+        .link-button:hover {
+            background-color: #363636; /* Change button background color on hover */
+            animation: shake 0.4s ease; /* Apply the shake animation on hover */
+        }
+
+        /* Shaking animation */
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+        .video-container {
+        border: 2px solid rgb(255, 255, 255);
+        width: 340px;
+        margin-bottom: 20px; /* Add space below the border */
+        padding: 0px; /* Add space inside the border */
+        border-radius: 8px; /* Rounded corners */
+
+
+
+    }
+    .video-container iframe {
+        display: block;
+        border-radius: 8px; /* Rounded corners */
+
+    }
+    .spotify-iframe {
+        width: 340px;
+        margin-bottom: 20px; /* Add space below the border */
+        padding: 0px; /* Add space inside the border */
+        border-radius: 8px; /* Rounded corners */}
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            width: 340px;
+            margin-top: -10px;
+
+        }
+
+        footer a {
+            margin: 0 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 30px;
+        }
+        #shareButton {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1; /* Ensure it's above other elements */
+    color: rgb(0, 0, 0);
+}
+
+.custom-iframe {
+    width: 340px;
+        margin-bottom: 20px; /* Add space below the border */
+        padding: 0; /* Add space inside the border */
+        border-radius: 8px; /* Rounded corners */
+    position: relative; /* or absolute, depending on your layout needs */
+    height: 44px;
+}
+
+.custom-iframe1 {
+    width: 340px;
+    height: 442px;
+    border: 2px solid rgb(255, 255, 255);
+        margin-bottom: 20px; /* Add space below the border */
+        padding: 0px; /* Add space inside the border */
+        border-radius: 8px; /* Rounded corners */
+        margin-top: 4px;
+}
+.footer-text {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+    color: #fff; /* Adjust text color */
+}
+    </style>
+    </head>
+    <button id="shareButton"><i class="fas fa-share"></i></button>
+</head>
+<button id="toggleButton"><i class="fas fa-moon"></i>
+    <i class="fas fa-sun" style="display: none;"></i></button> <!-- Button to toggle mode -->
+<body>
+    <div class="profile-cover"></div> <!-- Add the cover here -->
+    <div class="profile-info">
+    <div class="profile-info">
+        <!-- Profile image -->
+        <img src="bro123.webp" alt="Profile Image" class="profile-image"> <!-- Replace 'profile.jpg' with your profile image URL -->
+        
+        <!-- Text below profile image -->
+        <h2>Onesimus Thapa</h2>
+        <p class="profile-description">Musician/Artist</p>
+    </div>
+    </div>
+     <!-- Link buttons with icons -->
+    </div>
+    <iframe class="custom-iframe" src="https://bandcamp.com/EmbeddedPlayer/track=2369556366/size=small/bgcol=333333/linkcol=ffffff/transparent=true/" seamless><a href="https://onesimus860.bandcamp.com/track/reminiscenes">Reminiscenes by Onesimus Thapa and Angel Subba</a></iframe>
+    <a href="https://onesimus860.bandcamp.com/track/reminiscenes" class="link-button">
+        <i class="bi bi-spotify"></i><span>REMINISCENES OUT NOW!!</span>
+    </a>
+        </div>
+ <div class="video-container">
+    <iframe width="340" height="215" src="https://www.youtube.com/embed/Jj_vxUeZLHU" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+     <a href="https://www.facebook.com/anisimus.thapa?mibextid=LQQJ4d" class="link-button"><i class="fab fa-facebook"></i><span>Facebook</span></a>
+     <a href="https://www.youtube.com/@onesimusthapa" class="link-button"><i class="fab fa-youtube"></i><span>YouTube</span></a>
+     <a href="https://www.instagram.com/onesimus_thapa/reels/" class="link-button"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+     <a href="https://discord.com/invite/Sjh6bgQq" class="link-button"><i class="fab fa-discord"></i><span>Discord</span></a>
+    </div>
+    <iframe class="custom-iframe1" src="https://bandcamp.com/EmbeddedPlayer/track=2369556366/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://onesimus860.bandcamp.com/track/reminiscenes">Reminiscenes by Onesimus Thapa and Angel Subba</a></iframe>
+    <iframe class="spotify-iframe" src="https://open.spotify.com/embed/artist/1OiTeBlJOR5FQNtwOJzOZ5?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <footer>
+        <a href="https://onesimus860.bandcamp.com/track/reminiscenes"><i class="fab fa-spotify"></i></a>
+        <a href="https://www.facebook.com/anisimus.thapa?mibextid=LQQJ4d"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.youtube.com/@onesimusthapa"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.instagram.com/onesimus_thapa/reels/"><i class="fab fa-instagram"></i></a>
+        <a href="https://discord.com/invite/Sjh6bgQq"><i class="fab fa-discord"></i></a>
+    </footer>
+    <div class="footer-text">
+    <span class="link-text" onclick="window.open('https://www.instagram.com/angel0kai/?utm_source=qr', '_blank', 'noopener noreferrer')"> Created by angrl0kai</span>
+    </div>
+</body>
+ <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const moonIcon = document.querySelector('#toggleButton .fa-moon');
+        const sunIcon = document.querySelector('#toggleButton .fa-sun');
+
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            moonIcon.style.display = moonIcon.style.display === 'none' ? 'inline' : 'none';
+            sunIcon.style.display = sunIcon.style.display === 'none' ? 'inline' : 'none';
+        });
+         document.getElementById('shareButton').addEventListener('click', async () => {
+            try {
+                const shareData = {
+                    title: 'Check out Onesimus Thapa!',
+                    text: 'Discover amazing music by Onesimus Thapa.',
+                    url: window.location.href
+                };
+                await navigator.share(shareData);
+                console.log('Successfully shared!');
+            } catch (error) {
+                console.error('Error sharing:', error);
+            }
+        });
+    </script>
+
+
+</html>
